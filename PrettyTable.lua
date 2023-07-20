@@ -1,4 +1,7 @@
 local DEFAULT_COLUMN_SIZE = 5 --Count in symbols
+local VERTICAL_SYMBOL = "═"
+local HORIZONTAL_SYMBOL = "║"
+local ANGLE_SYMBOL = "+"
 
 local AllTables = {}
 
@@ -60,11 +63,11 @@ end
 
 local function GetCell( name, cellWeight )
 	local spacebar = " "
-	return "| "..name..spacebar:rep(cellWeight - name:len()).." "
+	return VERTICAL_SYMBOL.." "..name..spacebar:rep(cellWeight - name:len()).." "
 end
 
 local function Graf( columnsCount, cellWeight )
-	local graf = "-"
+	local graf = HORIZONTAL_SYMBOL
 	return graf:rep(columnsCount*(cellWeight+3)+1)
 end
 
